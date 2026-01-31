@@ -35,3 +35,10 @@ Constraints:
 - Open-source tools only
 - No heavy machine learning
 
+
+## Branching Strategy
+This project follows GitHub Flow.
+- main: stable production branch
+- feature/*: feature development branches
+
+
