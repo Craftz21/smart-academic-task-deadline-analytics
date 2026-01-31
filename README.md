@@ -41,4 +41,9 @@ This project follows GitHub Flow.
 - main: stable production branch
 - feature/*: feature development branches
 
+## Local Development Tools
+- Git & GitHub
+- Docker Desktop
+- VS Code
+- Python / Node.js
 
