@@ -47,3 +47,10 @@ This project follows GitHub Flow.
 - VS Code
 - Python / Node.js
 
+## Quick Start – Local Development
+
+cd backend
+docker build -t academic-tracker .
+docker run -p 5000:5000 academic-tracker
+
+Open http://localhost:5000 in browser
