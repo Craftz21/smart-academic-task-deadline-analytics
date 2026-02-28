@@ -54,3 +54,21 @@ docker build -t academic-tracker .
 docker run -p 5000:5000 academic-tracker
 
 Open http://localhost:5000 in browser
+
+## Software Design
+
+This project follows a layered client-server architecture to ensure separation of concerns, modularity, and maintainability.
+
+The system is divided into four layers:
+- Presentation Layer (Frontend UI)
+- Application Layer (Flask REST API)
+- Data Layer (Database)
+- Deployment Layer (Docker Container)
+
+The architecture ensures low coupling between modules and high cohesion within each service. Business logic, analytics processing, and data handling are isolated to allow future scalability and easier maintenance.
+
+### Figma Prototype
+
+Figma Design Link: ### Figma Prototype
+
+Figma Design Link: https://www.figma.com/make/rxUGHme1jQNwu41HFks2Ua/Web-Dashboard-UI-Flow?fullscreen=1&t=K5XGbS0Ip27M5K6a-1
