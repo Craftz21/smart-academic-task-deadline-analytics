@@ -1,0 +1,65 @@
+# ── AcademiQ — Docker Compose ─────────────────────────────────────────────────
+# Runs: backend (Flask) + frontend (React/Nginx)
+# Usage: docker-compose up --build
+# Access: http://localhost:3000
+
+version: "3.9"
+
+services:
+
+  # ── Flask Backend ────────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: academiq_backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # Persist SQLite database across container restarts
+      - db_data:/app/data
+      # Hot-reload source (development only — remove in production)
+      - ./backend:/app
+    networks:
+      - academiq_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ── React Frontend (Nginx) ───────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: academiq_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - academiq_net
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+# ── Named Volumes ─────────────────────────────────────────────────────────────
+volumes:
+  db_data:
+    name: academiq_db
+
+# ── Network ───────────────────────────────────────────────────────────────────
+networks:
+  academiq_net:
+    name: academiq_network
+    driver: bridge
