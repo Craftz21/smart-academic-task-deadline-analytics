@@ -163,33 +163,29 @@ Database	SQLite
 Deployment	Docker, NGINX
 
 🧩 Role Capabilities
-Feature	Student	Faculty	Admin
-View tasks	✅	✅	✅
-Create/edit tasks	❌	✅	✅
-Analytics	✅	✅	✅
-Manage users	❌	❌	✅
+Feature	        Student	Faculty	Admin
+View tasks	      ✅	    ✅	   ✅
+Create/edit tasks	❌	    ✅	   ✅
+Analytics	        ✅	    ✅	   ✅
+Manage users	    ❌	    ❌	   ✅
+
 🏗 Software Design
-
 The system follows a Layered Client-Server Architecture:
-
 Presentation Layer → Frontend UI
 Application Layer → Flask API
 Data Layer → Database
 Deployment Layer → Docker
 
 Design principles:
-
 Low coupling
 High cohesion
 Separation of concerns
-🎨 Figma Prototype
 
+🎨 Figma Prototype
 https://www.figma.com/make/rxUGHme1jQNwu41HFks2Ua/Web-Dashboard-UI-Flow?fullscreen=1&t=K5XGbS0Ip27M5K6a-1
 
 📌 Version Control
-
 Version control was implemented using Git and GitHub with structured commits across development, Dockerization, and testing phases.
 
-❤️ Conclusion
-
+Conclusion
 This project demonstrates a complete full-stack system with deployment, testing, and analytics capabilities, designed to improve academic task management and productivity.
