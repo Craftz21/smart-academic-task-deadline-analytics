@@ -74,59 +74,15 @@ This project follows **GitHub Flow**:
 - Python / Node.js  
 
 ---
-
-## 🚀 Quick Start
-
-### 🐳 Docker (Recommended)
-
-```bash
-bash docker-run.sh
-
-Then open:
-
-🌐 Frontend → http://localhost:3000
-⚙️ Backend → http://localhost:5000
-💻 Local Setup
-Linux / macOS
-bash run.sh
-Windows
-run.bat
-
-Frontend:
-
-http://localhost:5173
-🔑 Demo Accounts
-Role	Username	Password
-Admin	admin	admin123
-Faculty	prof_alex	prof123
-Student	student1	student123
-📁 Project Structure
-project-root/
-│
-├── backend/                   ← Flask REST API
-│   ├── app.py
-│   ├── models.py
-│   ├── routes/
-│   ├── services/
-│   ├── requirements.txt
-│
-├── frontend/                  ← React + Vite + TypeScript
-│   ├── src/
-│   ├── package.json
-│   ├── vite.config.ts
-│
-├── docker-compose.yml         ← Docker orchestration
-├── docker-run.sh              ← Docker startup script
-├── run.sh / run.bat           ← Local startup scripts
-└── README.md
 🌐 API Endpoints
-Method	Endpoint	Description
-POST	/login	User login
-GET	/tasks	Fetch tasks
-POST	/tasks	Create task
-PUT	/tasks/:id	Update task
-GET	/analytics	Analytics data
-GET	/courses	Course list
+Method	Endpoint	  Description
+POST	  /login	    User login
+GET	    /tasks	    Fetch tasks
+POST	  /tasks	    Create task
+PUT	    /tasks/:id	Update task
+GET	    /analytics	Analytics data
+GET	    /courses	  Course list
+
 📊 Analytics Features
 Task summary (completed, pending, overdue)
 Priority distribution
@@ -134,32 +90,30 @@ Weekly workload charts
 Course-wise task breakdown
 Upcoming deadlines
 Workload score calculation
+
 🐳 Docker Architecture
 Backend → Flask container
 Frontend → Built with Vite and served via NGINX
 Docker Compose → service orchestration
-🧪 Testing
 
+🧪 Testing
 The system was tested using:
 
 ✔ Integration Testing
-
 Verified frontend-backend API communication (e.g., login request returning HTTP 200).
 
 ✔ Regression Testing
-
 Ensured existing features such as dashboard, tasks, and analytics function correctly after system updates.
 
 ✔ Mutation Testing
-
 Modified authentication logic intentionally to test system robustness and error handling.
 
 ⚙️ Tech Stack
-Layer	Technology
-Frontend	React, TypeScript, Vite
-Styling	Tailwind CSS
-Backend	Python, Flask
-Database	SQLite
+Layer	      Technology
+Frontend	  React, TypeScript, Vite
+Styling	    Tailwind CSS
+Backend	    Python, Flask
+Database	  SQLite
 Deployment	Docker, NGINX
 
 🧩 Role Capabilities
@@ -189,3 +143,49 @@ Version control was implemented using Git and GitHub with structured commits acr
 
 Conclusion
 This project demonstrates a complete full-stack system with deployment, testing, and analytics capabilities, designed to improve academic task management and productivity.
+
+## 🚀 Quick Start
+
+### 🐳 Docker (Recommended)
+
+```bash
+bash docker-run.sh
+
+Then open:
+
+🌐 Frontend → http://localhost:3000
+⚙️ Backend → http://localhost:5000
+💻 Local Setup
+Linux / macOS
+bash run.sh
+Windows
+run.bat
+
+Frontend:
+http://localhost:5173
+
+🔑 Demo Accounts
+Role	Username	Password
+Admin	admin	admin123
+Faculty	prof_alex	prof123
+Student	student1	student123
+
+📁 Project Structure
+project-root/
+│
+├── backend/                   ← Flask REST API
+│   ├── app.py
+│   ├── models.py
+│   ├── routes/
+│   ├── services/
+│   ├── requirements.txt
+│
+├── frontend/                  ← React + Vite + TypeScript
+│   ├── src/
+│   ├── package.json
+│   ├── vite.config.ts
+│
+├── docker-compose.yml         ← Docker orchestration
+├── docker-run.sh              ← Docker startup script
+├── run.sh / run.bat           ← Local startup scripts
+└── README.md
