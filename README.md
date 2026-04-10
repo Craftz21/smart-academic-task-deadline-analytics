@@ -75,65 +75,92 @@ This project follows **GitHub Flow**:
 
 ---
 ## 🌐 API Endpoints
--Method	Endpoint	  Description
--POST	  /login	    User login
--GET	    /tasks	    Fetch tasks
--POST	  /tasks	    Create task
--PUT	    /tasks/:id	Update task
--GET	    /analytics	Analytics data
--GET	    /courses	  Course list
+
+| Method | Endpoint        | Description                |
+|--------|---------------|----------------------------|
+| POST   | `/login`       | User authentication        |
+| GET    | `/tasks`       | Fetch all tasks            |
+| POST   | `/tasks`       | Create a new task          |
+| PUT    | `/tasks/:id`   | Update task details        |
+| GET    | `/analytics`   | Retrieve analytics data    |
+| GET    | `/courses`     | Fetch course list          |
+
+---
 
 ## 📊 Analytics Features
--Task summary (completed, pending, overdue)
--Priority distribution
--Weekly workload charts
--Course-wise task breakdown
--Upcoming deadlines
--Workload score calculation
+
+- Task summary (Completed, Pending, Overdue)  
+- Priority distribution visualization  
+- Weekly workload trends  
+- Course-wise task breakdown  
+- Upcoming deadline tracking  
+- Workload score calculation (based on priority & urgency)  
+
+---
 
 ## 🐳 Docker Architecture
--Backend → Flask container
--Frontend → Built with Vite and served via NGINX
--Docker Compose → service orchestration
+
+- **Backend** → Flask application running in a container  
+- **Frontend** → Built using Vite and served via NGINX  
+- **Docker Compose** → Manages multi-container setup  
+
+---
 
 ## 🧪 Testing
--The system was tested using:
 
--✔ Integration Testing
--Verified frontend-backend API communication (e.g., login request returning HTTP 200).
+The system was validated using multiple testing strategies:
 
--✔ Regression Testing
--Ensured existing features such as dashboard, tasks, and analytics function correctly after system updates.
+### ✔ Integration Testing
+- Verified communication between frontend and backend APIs  
+- Example: Successful login request returning HTTP 200 response  
 
--✔ Mutation Testing
--Modified authentication logic intentionally to test system robustness and error handling.
+### ✔ Regression Testing
+- Ensured previously implemented features (dashboard, tasks, analytics) function correctly after updates  
+
+### ✔ Mutation Testing
+- Introduced invalid inputs and modified logic to test system robustness and error handling  
+
+---
 
 ## ⚙️ Tech Stack
--Layer	      Technology
--Frontend	  React, TypeScript, Vite
--Styling	    Tailwind CSS
--Backend	    Python, Flask
--Database	  SQLite
--Deployment	Docker, NGINX
+
+| Layer       | Technology                      |
+|------------|-------------------------------|
+| Frontend    | React, TypeScript, Vite        |
+| Styling     | Tailwind CSS                   |
+| Backend     | Python, Flask (REST API)       |
+| Database    | SQLite                         |
+| Deployment  | Docker, NGINX                  |
+
+---
 
 ## 🧩 Role Capabilities
--Feature	        Student	Faculty	Admin
--View tasks	      ✅	    ✅	   ✅
--Create/edit tasks	❌	    ✅	   ✅
--Analytics	        ✅	    ✅	   ✅
--Manage users	    ❌	    ❌	   ✅
+
+| Feature              | Student | Faculty | Admin |
+|---------------------|--------|--------|-------|
+| View Tasks          | ✅     | ✅     | ✅    |
+| Create/Edit Tasks   | ❌     | ✅     | ✅    |
+| View Analytics      | ✅     | ✅     | ✅    |
+| Manage Users        | ❌     | ❌     | ✅    |
+
+---
 
 ## 🏗 Software Design
--The system follows a Layered Client-Server Architecture:
--Presentation Layer → Frontend UI
--Application Layer → Flask API
--Data Layer → Database
--Deployment Layer → Docker
 
--Design principles:
--Low coupling
--High cohesion
--Separation of concerns
+The system follows a **Layered Client-Server Architecture**:
+
+- **Presentation Layer** → Frontend UI (React)  
+- **Application Layer** → Flask REST API  
+- **Data Layer** → SQLite Database  
+- **Deployment Layer** → Docker containers  
+
+### Design Principles Applied
+
+- **Low Coupling** → Independent modules communicate via APIs  
+- **High Cohesion** → Each module handles a specific responsibility  
+- **Separation of Concerns** → Clear division between UI, logic, and data layers  
+
+---
 
 ## 🎨 Figma Prototype
 - https://www.figma.com/make/rxUGHme1jQNwu41HFks2Ua/Web-Dashboard-UI-Flow?fullscreen=1&t=K5XGbS0Ip27M5K6a-1
