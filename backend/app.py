@@ -7,7 +7,7 @@ from flask import Flask
 from flask_cors import CORS
 from models import init_db
 
-# Import route blueprints
+
 from routes.auth import auth_bp
 from routes.tasks import tasks_bp
 from routes.analytics import analytics_bp
